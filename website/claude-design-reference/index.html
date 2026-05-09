@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fired from Job! — Job Market Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- ============= TOP BAR ============= -->
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">▮</span>
+    <span class="brand-name">FIRED FROM JOB<span class="bang">!</span></span>
+    <span class="brand-tag">/ MARKET INTELLIGENCE TERMINAL</span>
+  </div>
+  <div class="topbar-right">
+    <span class="status-dot"></span>
+    <span class="mono dim">LIVE · <span id="liveClock">--:--:--</span> UTC</span>
+    <span class="mono dim sep">|</span>
+    <span class="mono dim">v 4.12.0</span>
+  </div>
+</header>
+
+<!-- ============= DOT NAV ============= -->
+<nav class="dotnav" aria-label="Section navigation">
+  <a href="#sec1" class="dot active" data-target="sec1" aria-label="01 Hero">
+    <span class="dot-mark"></span>
+    <span class="dot-label">01 / Hero</span>
+  </a>
+  <a href="#sec2" class="dot" data-target="sec2" aria-label="02 Insights">
+    <span class="dot-mark"></span>
+    <span class="dot-label">02 / Insights</span>
+  </a>
+  <a href="#sec3" class="dot" data-target="sec3" aria-label="03 Explore">
+    <span class="dot-mark"></span>
+    <span class="dot-label">03 / Explore</span>
+  </a>
+  <a href="#sec4" class="dot" data-target="sec4" aria-label="04 Footer">
+    <span class="dot-mark"></span>
+    <span class="dot-label">04 / Footer</span>
+  </a>
+</nav>
+
+<main class="scroller" id="scroller">
+
+  <!-- ====================================================== -->
+  <!-- SECTION 1 — HERO                                       -->
+  <!-- ====================================================== -->
+  <section class="snap sec sec-hero" id="sec1" data-screen-label="01 Hero">
+    <div class="hero-grid">
+      <div class="hero-corner tl">
+        <span class="mono micro">N 40°42′46″ · W 74°00′21″</span>
+      </div>
+      <div class="hero-corner tr">
+        <span class="mono micro">RUN ID · #FFJ-2026-0509-0418</span>
+      </div>
+      <div class="hero-corner bl">
+        <span class="mono micro">SAMPLE Δ · 24h</span>
+      </div>
+      <div class="hero-corner br">
+        <span class="mono micro">SCROLL ↓</span>
+      </div>
+
+      <div class="hero-center">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>Unbiased &amp; data-driven job market watcher</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Catch the trends<br />
+          <em>before</em> they go mainstream.
+        </h1>
+
+        <div class="hero-track">
+          <span class="hero-track-label mono">TRACKING DEMAND FOR</span>
+          <span class="hero-track-roll" id="roleRoll">
+            <span class="hero-track-role">AI Engineer</span>
+          </span>
+        </div>
+
+        <div class="hero-stat">
+          <span class="mono dim">Tracking</span>
+          <span class="hero-stat-num" id="jobCount">12,847,392</span>
+          <span class="mono dim">jobs across</span>
+          <span class="hero-stat-num">20+</span>
+          <span class="mono dim">countries,</span>
+          <span class="hero-stat-num">200+</span>
+          <span class="mono dim">cities,</span>
+          <span class="hero-stat-num">50+</span>
+          <span class="mono dim">portals</span>
+        </div>
+      </div>
+
+      <!-- editorial sparkline strip at bottom -->
+      <div class="hero-strip">
+        <svg class="hero-spark" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+          <polyline class="spark-line" id="heroSpark" />
+        </svg>
+        <div class="hero-strip-labels mono micro">
+          <span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span><span>NOV</span><span>DEC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SECTION 2 — INSIGHTS                                   -->
+  <!-- ====================================================== -->
+  <section class="snap sec sec-insights" id="sec2" data-screen-label="02 Insights">
+    <div class="insights-head">
+      <span class="mono micro section-tag">§ 02 / INSIGHTS</span>
+      <h2 class="insights-title">
+        The market is <em>not</em><br />
+        what the headlines say.
+      </h2>
+      <p class="insights-sub mono">
+        Five independent signals pulled from <span class="hl">2.4M postings</span> in the last 90 days.
+        Cross-referenced, deduplicated, source-tagged.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <!-- BIG CARD 1 — ROLE VOLUME -->
+      <article class="card card-big card-volume">
+        <header class="card-head">
+          <span class="mono micro">01 · ROLE VOLUME · 30D</span>
+          <span class="mono micro tag-live"><span class="status-dot"></span>LIVE</span>
+        </header>
+        <h3 class="card-title">Roles, ranked by raw posting volume</h3>
+        <ul class="vol-list" id="volList"></ul>
+        <footer class="card-foot mono micro">
+          <span>n = 412,318 postings</span><span>updated 09 May · 04:17 UTC</span>
+        </footer>
+      </article>
+
+      <!-- BIG CARD 2 — PULSEBOARD GAUGE -->
+      <article class="card card-big card-gauge">
+        <header class="card-head">
+          <span class="mono micro">02 · PULSEBOARD™</span>
+          <span class="mono micro tag-live"><span class="status-dot"></span>LIVE</span>
+        </header>
+        <h3 class="card-title">Recession Index</h3>
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 400 240" aria-hidden="true">
+            <!-- arc segments -->
+            <path d="M 40 220 A 160 160 0 0 1 160 71" class="gauge-arc seg-1" />
+            <path d="M 160 71 A 160 160 0 0 1 240 71" class="gauge-arc seg-2" />
+            <path d="M 240 71 A 160 160 0 0 1 360 220" class="gauge-arc seg-3" />
+            <!-- ticks -->
+            <g class="gauge-ticks" id="gaugeTicks"></g>
+            <!-- needle -->
+            <g id="gaugeNeedle" style="transform-origin:200px 220px;">
+              <line x1="200" y1="220" x2="200" y2="80" class="gauge-needle" />
+              <circle cx="200" cy="220" r="9" class="gauge-pivot" />
+              <circle cx="200" cy="220" r="3" class="gauge-pivot-dot" />
+            </g>
+          </svg>
+          <div class="gauge-legend mono micro">
+            <span class="leg seg-1">EXPANSION</span>
+            <span class="leg seg-2">CAUTION</span>
+            <span class="leg seg-3">CONTRACTION</span>
+          </div>
+        </div>
+        <div class="gauge-readout">
+          <div>
+            <span class="mono micro dim">CURRENT READING</span>
+            <span class="gauge-value" id="gaugeValue">CAUTION · 58</span>
+          </div>
+          <div>
+            <span class="mono micro dim">Δ vs LAST QTR</span>
+            <span class="gauge-delta neg">▲ +9.2 pts</span>
+          </div>
+        </div>
+        <footer class="card-foot mono micro">
+          <span>composite of 14 indicators</span><span>scale 0–100</span>
+        </footer>
+      </article>
+
+      <!-- SMALL CARD 1 — TOP INDUSTRY -->
+      <article class="card card-sm card-industry">
+        <header class="card-head">
+          <span class="mono micro">03 · INDUSTRY HEAT</span>
+        </header>
+        <h3 class="card-title-sm">Where hiring grew most</h3>
+        <ol class="industry-list" id="industryList"></ol>
+      </article>
+
+      <!-- SMALL CARD 2 — WORK MODE -->
+      <article class="card card-sm card-mode">
+        <header class="card-head">
+          <span class="mono micro">04 · WORK MODE</span>
+        </header>
+        <h3 class="card-title-sm">Office vs anywhere</h3>
+        <div class="mode-rows">
+          <div class="mode-row" data-mode="hybrid">
+            <span class="mode-name">HYBRID</span>
+            <div class="mode-bar"><span style="width:62%"></span></div>
+            <span class="mode-pct">62%</span>
+            <span class="mode-delta pos">▲ 4.1</span>
+          </div>
+          <div class="mode-row" data-mode="remote">
+            <span class="mode-name">REMOTE</span>
+            <div class="mode-bar"><span style="width:23%"></span></div>
+            <span class="mode-pct">23%</span>
+            <span class="mode-delta neg">▼ 6.3</span>
+          </div>
+          <div class="mode-row" data-mode="office">
+            <span class="mode-name">IN OFFICE</span>
+            <div class="mode-bar"><span style="width:15%"></span></div>
+            <span class="mode-pct">15%</span>
+            <span class="mode-delta pos">▲ 2.2</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SMALL CARD 3 — EXPERIENCE -->
+      <article class="card card-sm card-yoe">
+        <header class="card-head">
+          <span class="mono micro">05 · EXPERIENCE DEMAND</span>
+        </header>
+        <h3 class="card-title-sm">Years of experience in demand</h3>
+        <div class="yoe-bars">
+          <div class="yoe-col" style="--h:34%">
+            <span class="yoe-bar"></span>
+            <span class="yoe-pct">34%</span>
+            <span class="yoe-label mono micro">JUNIOR<br />0–2 YOE</span>
+          </div>
+          <div class="yoe-col is-peak" style="--h:48%">
+            <span class="yoe-bar"></span>
+            <span class="yoe-pct">48%</span>
+            <span class="yoe-label mono micro">MID<br />4–5 YOE</span>
+          </div>
+          <div class="yoe-col" style="--h:18%">
+            <span class="yoe-bar"></span>
+            <span class="yoe-pct">18%</span>
+            <span class="yoe-label mono micro">SENIOR<br />8+ YOE</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SECTION 3 — EXPLORE                                    -->
+  <!-- ====================================================== -->
+  <section class="snap sec sec-explore" id="sec3" data-screen-label="03 Explore">
+    <div class="explore-head">
+      <span class="mono micro section-tag">§ 03 / EXPLORE</span>
+      <h2 class="explore-title">Drill <em>IN</em>!</h2>
+      <p class="explore-sub mono">Slice 12.8M postings by region, role, work mode and source.</p>
+    </div>
+
+    <div class="explore-body">
+      <!-- LEFT: FILTER PANEL -->
+      <aside class="filters" aria-label="Filters">
+        <div class="filter-block">
+          <header class="filter-head">
+            <span class="mono micro">F1 · REGION</span>
+            <span class="mono micro dim" id="regionCount">2 active</span>
+          </header>
+          <div class="filter-sub">
+            <label class="mono micro dim">COUNTRY</label>
+            <div class="chips" data-group="country">
+              <button class="chip is-on" data-v="IN">India</button>
+              <button class="chip is-on" data-v="US">United States</button>
+              <button class="chip" data-v="UK">United Kingdom</button>
+              <button class="chip" data-v="DE">Germany</button>
+              <button class="chip" data-v="SG">Singapore</button>
+              <button class="chip" data-v="AU">Australia</button>
+            </div>
+            <label class="mono micro dim">CITY</label>
+            <div class="chips" data-group="city">
+              <button class="chip is-on" data-v="BLR">Bengaluru</button>
+              <button class="chip" data-v="NYC">New York</button>
+              <button class="chip" data-v="SFO">San Francisco</button>
+              <button class="chip" data-v="LDN">London</button>
+              <button class="chip" data-v="BER">Berlin</button>
+              <button class="chip" data-v="MUM">Mumbai</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <header class="filter-head">
+            <span class="mono micro">F2 · JOB ROLE</span>
+            <span class="mono micro dim" id="roleCount">3 active</span>
+          </header>
+          <div class="chips" data-group="role">
+            <button class="chip is-on" data-v="AI">AI Engineer</button>
+            <button class="chip is-on" data-v="PM">Product Manager</button>
+            <button class="chip is-on" data-v="SWE">Software Eng</button>
+            <button class="chip" data-v="DS">Data Scientist</button>
+            <button class="chip" data-v="DEV">DevOps</button>
+            <button class="chip" data-v="UX">UX Designer</button>
+            <button class="chip" data-v="CON">Consultant</button>
+            <button class="chip" data-v="FIN">Financial Analyst</button>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <header class="filter-head">
+            <span class="mono micro">F3 · WORK MODE</span>
+            <span class="mono micro dim" id="modeCount">2 active</span>
+          </header>
+          <div class="chips" data-group="mode">
+            <button class="chip is-on" data-v="HYB">Hybrid</button>
+            <button class="chip is-on" data-v="REM">Remote</button>
+            <button class="chip" data-v="OFF">In Office</button>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <header class="filter-head">
+            <span class="mono micro">F4 · SOURCES</span>
+            <span class="mono micro dim" id="srcCount">4 active</span>
+          </header>
+          <div class="chips" data-group="src">
+            <button class="chip is-on" data-v="LI">LinkedIn</button>
+            <button class="chip is-on" data-v="NK">Naukri</button>
+            <button class="chip is-on" data-v="MJ">MonsterJobs</button>
+            <button class="chip is-on" data-v="IND">Indeed</button>
+            <button class="chip" data-v="GD">Glassdoor</button>
+            <button class="chip" data-v="WW">Wellfound</button>
+            <button class="chip" data-v="HF">Hirect</button>
+            <button class="chip" data-v="ZIP">ZipRecruiter</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER: CHART -->
+      <div class="chart-area">
+        <header class="chart-head">
+          <div class="viz-toggle" id="vizToggle" role="tablist">
+            <button class="viz-btn is-on" data-viz="line">◢◣ LINE</button>
+            <button class="viz-btn" data-viz="bars">▮▮▮ BARS</button>
+            <button class="viz-btn" data-viz="area">▲▲▲ AREA</button>
+          </div>
+          <div class="chart-meta mono micro">
+            <span>X · WEEK (Wk 1 → Wk 18)</span>
+            <span class="sep">|</span>
+            <span>Y · POSTINGS / 1K</span>
+          </div>
+        </header>
+        <div class="chart-stage" id="chartStage">
+          <svg class="chart-svg" id="chartSvg" viewBox="0 0 800 420" preserveAspectRatio="none"></svg>
+        </div>
+        <div class="chart-legend" id="chartLegend"></div>
+      </div>
+
+      <!-- RIGHT: APPLIED FILTERS / DATAPOINTS -->
+      <aside class="applied" aria-label="Applied filters">
+        <header class="applied-head">
+          <span class="mono micro">APPLIED FILTERS</span>
+        </header>
+        <div class="applied-readout">
+          <div class="applied-num">
+            <span class="num" id="dpFetched">0</span>
+            <span class="mono micro dim">DATA POINTS FETCHED</span>
+          </div>
+          <div class="applied-num">
+            <span class="num" id="dpAnalysed">0</span>
+            <span class="mono micro dim">ANALYSED · POST-DEDUPE</span>
+          </div>
+          <div class="applied-num">
+            <span class="num small" id="dpQuality">98.4<span class="unit">%</span></span>
+            <span class="mono micro dim">CONFIDENCE</span>
+          </div>
+        </div>
+        <div class="applied-summary" id="appliedSummary"></div>
+        <footer class="applied-foot mono micro">
+          <span class="status-dot"></span>
+          <span>QUERY · <span id="queryHash">0x9a4f…c2b1</span></span>
+          <span class="dim">· 218 ms</span>
+        </footer>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SECTION 4 — FOOTER                                     -->
+  <!-- ====================================================== -->
+  <section class="snap sec sec-footer" id="sec4" data-screen-label="04 Footer">
+    <div class="footer-rule"></div>
+
+    <div class="footer-grid">
+      <div class="footer-mark">
+        <span class="brand-mark big">▮</span>
+        <span class="footer-name">FIRED FROM JOB<span class="bang">!</span></span>
+      </div>
+
+      <div class="footer-credit">
+        <span class="mono micro dim">// CREDIT</span>
+        <p class="credit-line">
+          Vibe coded by <em>Omkar.ajagunde</em><br />
+          using <span class="hl">Claude</span>.
+        </p>
+      </div>
+
+      <div class="footer-social">
+        <span class="mono micro dim">// SOCIAL</span>
+        <ul class="social-list">
+          <li>
+            <a href="https://www.linkedin.com/in/omkar-ajagunde" target="_blank" rel="noopener">
+              <span class="mono micro">L1</span>
+              <span class="social-name">LinkedIn</span>
+              <span class="social-handle mono">/in/omkar-ajagunde</span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@omkarajagunde" target="_blank" rel="noopener">
+              <span class="mono micro">Y2</span>
+              <span class="social-name">YouTube</span>
+              <span class="social-handle mono">@omkarajagunde</span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cdn-cgi/l/email-protection#57383a3c362579363d36302239333217303a363e3b7934383a">
+              <span class="mono micro">G3</span>
+              <span class="social-name">Gmail</span>
+              <span class="social-handle mono"><span class="__cf_email__" data-cfemail="1e7173757f6c307f747f796b707a7b5e79737f7772307d7173">[email&#160;protected]</span></span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-meta">
+        <span class="mono micro dim">// META</span>
+        <ul class="meta-list mono micro">
+          <li>BUILD · 4.12.0</li>
+          <li>UPLINK · NYSE-ARCA</li>
+          <li>LAT · 38ms</li>
+          <li>UPTIME · 99.97%</li>
+          <li>© 2026 FFJ TERMINAL</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bigtype" aria-hidden="true">END OF FEED.</div>
+  </section>
+
+</main>
+
+<!-- ============= TWEAKS PANEL ============= -->
+<div class="tweaks-panel" id="tweaksPanel" hidden>
+  <header class="tweaks-head">
+    <span class="mono">TWEAKS</span>
+    <button class="tweaks-close" id="tweaksClose" aria-label="Close">×</button>
+  </header>
+
+  <section class="tweak-sec">
+    <h4 class="mono micro">ACCENT</h4>
+    <div class="tweak-swatches" id="tweakSwatches"></div>
+    <div class="tweak-row">
+      <label class="mono micro dim" for="tweakColor">CUSTOM</label>
+      <input type="color" id="tweakColor" value="#ff5b1f" />
+    </div>
+  </section>
+
+  <section class="tweak-sec">
+    <h4 class="mono micro">DENSITY</h4>
+    <div class="tweak-segm" id="tweakDensity">
+      <button data-v="comfortable" class="is-on">Comfortable</button>
+      <button data-v="compact">Compact</button>
+    </div>
+  </section>
+
+  <section class="tweak-sec">
+    <h4 class="mono micro">SCROLL SNAP</h4>
+    <div class="tweak-segm" id="tweakSnap">
+      <button data-v="on" class="is-on">On</button>
+      <button data-v="off">Off</button>
+    </div>
+  </section>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#1463ff",
+  "density": "comfortable",
+  "snap": "on"
+}/*EDITMODE-END*/;
+window.__TWEAK_DEFAULTS__ = TWEAK_DEFAULTS;
+</script>
+<script src="app.js"></script>
+</body>
+</html>
