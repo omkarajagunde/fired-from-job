@@ -419,6 +419,16 @@ html, body {
   padding-top: 24px;
 }
 
+/* ── LIVE VALUE ANIMATION ── */
+@keyframes valueFlash {
+  0%   { color: var(--accent); opacity: 0.5; }
+  25%  { color: var(--accent); opacity: 1; }
+  100% { color: inherit; opacity: 1; }
+}
+.live-value {
+  animation: valueFlash 0.8s ease-out;
+}
+
 /* ── SSR BADGE ── */
 .ssr-badge {
   display: inline-flex;
